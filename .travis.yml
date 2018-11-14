@@ -1,0 +1,27 @@
+language: android
+jdk: oraclejdk8
+android:
+  components:
+  - tools
+  - platform-tools
+  - build-tools-28.0.2
+  - android-28
+  - extra-google-m2repository
+  - extra-android-m2repository
+before_install:
+- chmod +x gradlew
+script:
+#- "./gradlew testDebugUnitTest"
+- "./build-apk.sh"
+# deploy:
+#   provider: releases
+#   overwrite: true
+#   api_key:
+#     secure: KYm0y+0TYMd1KIIgCBvgQr+48UOaEgjNSt/sXT4zX7jjtKwmfj9V9fdN/n7TpUTBk9XiRc7NXszwR7myPwD3SV9FJ7kwnmh6vd3vQ75kP/ViDkST20WZyNsN4Bov9c5KhBe6gJyXPaPNDzt/LlR7d58JwpjEplU/jKJpKwqamRGBVkJmKrgACjjeBtvdSxbHB2ERyYN8XQcN8fcEEt+WBcY/sxqdf+/XBY88pLDZQh4GZ1eQFLZ1eUcOZegunCVnGIymQsFBtBzF0VoSKhussQ0mIOsZn1EL8VLJ4m8mm+agCjLSHVThRBkyVwDJgJYMDSZQmGKyDJHyGb2rJXg3aOfZ81eKc6PAr6JiUUDd10xRzl58nW3ETFHJCasz0NLyUtcpVyA4WOz0F3QVK81B+qTwwua3wp7Hf9HcGdsG2v5VAIzpRF6CwWNCGqWbSkva+kzoW640LqDdqAgXgS1ya90XhmyE5M6w7LCICAbvOBC6GRPGJjtate5A88Fu7Gpotnnq1OpRx914VLg7COy2MLfOFXQcCCkqvq8FDLGx0Y4krvl8GwkdfutdU8VQ7AQUNJhmEp67rYGee5HQGqWb9zdZO756LPzVBHc0Z0OqS4jVp1BW0zXyJuuTgleq6IwXAyXnNNZdCUPih+6vaeDIAGcrZSjvIPXGn6JD/B+Of1A=
+#   file_glob: true
+#   file: build/apk/*
+#   skip_cleanup: true
+#   on:
+#     repo: mobilefactoryamiltone/sample-android-ci
+#     tags: false
+#     all_branches: true
